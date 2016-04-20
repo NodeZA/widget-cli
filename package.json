@@ -1,0 +1,25 @@
+{
+  "name": "widget-cli",
+  "version": "0.0.1",
+  "description": "WidGet CMS commandline tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/NodeZA/widget-cli.git"
+  },
+  "keywords": [
+    "widget-cms",
+    "commandline",
+    "content",
+    "management"
+  ],
+  "author": "Qawelesizwe Mlilo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NodeZA/widget-cli/issues"
+  },
+  "homepage": "https://github.com/NodeZA/widget-cli#readme"
+}

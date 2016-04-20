@@ -1,0 +1,1 @@
+# WidGet CMS commandline tool
