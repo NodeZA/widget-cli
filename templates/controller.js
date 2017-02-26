@@ -4,17 +4,13 @@
  * Module dependencies.
  */
 
- "use strict";
-
-
-
-
-
-
+const pluralize = require('pluralize');
 
 
 module.exports = function (name) {
+  let plural = pluralize(name);
   let capitalised = name.charAt(0).toUpperCase() + name.slice(1);
+  let capitalisedPlural = plural.charAt(0).toUpperCase() + plural.slice(1);
   let tmpl = `
   "use strict";
 
@@ -23,7 +19,7 @@ module.exports = function (name) {
   const ${capitalised} = App.getModel('${capitalised}');
 
 
-  const ${capitalised}sController = App.Controller.extend({
+  const ${capitalisedPlural}Controller = App.Controller.extend({
 
     /*
      * GET one item
@@ -88,7 +84,7 @@ module.exports = function (name) {
     }
   });
 
-  module.exports = App.addController('${capitalised}s', ${capitalised}sController);
+  module.exports = App.addController('${capitalisedPlural}', ${capitalisedPlural}Controller);
   `;
 
   return tmpl;

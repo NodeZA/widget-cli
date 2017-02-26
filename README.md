@@ -10,15 +10,12 @@ npm i widget-cli -g
 
 ### Commands
 ```
-widget-cli create [--model --collection --controller --route --widget --all]  user
-
-
-widget-cli create -model [name]
-widget-cli create -collection [name]
-widget-cli create -controller [name]
-widget-cli create -route [name]
-widget-cli create -widget [name]
-
+widget-cli create --model [name]
+widget-cli create --collection [name]
+widget-cli create --controller [name]
+widget-cli create --route [name]
+widget-cli create --widget [name]
+widget-cli create --all // creates model, controller, collection, and route
 ```
 
 

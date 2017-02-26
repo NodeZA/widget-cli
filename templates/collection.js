@@ -3,27 +3,30 @@
 /**
  * Module dependencies.
  */
-
+const pluralize = require('pluralize');
 
 module.exports = function (name) {
+  let plural = pluralize(name);
   let capitalised = name.charAt(0).toUpperCase() + name.slice(1);
+  let capitalisedPlural = plural.charAt(0).toUpperCase() + plural.slice(1);
+  
   let tmpl = `
   "use strict";
 
   /**
-   * ${capitalised}s collection
+   * ${capitalisedPlural} collection
   **/
 
   const App = require('widget-cms');
   const ${capitalised} = App.getModel('${capitalised}');
 
-  const ${capitalised}s = App.Collection.extend({
+  const ${capitalisedPlural} = App.Collection.extend({
 
     model: ${capitalised}
 
   });
 
-  module.exports = App.addCollection('${capitalised}s', ${capitalised}s);
+  module.exports = App.addCollection('${capitalisedPlural}', ${capitalisedPlural});
   `;
 
   return tmpl;
