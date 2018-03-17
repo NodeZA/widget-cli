@@ -24,63 +24,57 @@ module.exports = function (name) {
     /*
      * GET one item
     **/
-    get${capitalised}: function (req, res, next) {
-      return ${capitalised}.where('id', req.params.id)
-      .fetch()
-      .then(function (item) {
-        return res.json(item.toJSON());
-      })
-      .catch(function (error) {
+    get${capitalised}: async function (req, res, next) {
+      try {
+        let ${name} = await ${capitalised}.where('id', req.params.id).fetch();
+        return res.json(${name}.toJSON());
+      }
+      catch (error) {
         console.error(error);
-      });
+      }
     },
 
 
     /*
      * GET all items
     **/
-    getAll: function (req, res, next) {
-      return ${capitalised}.collection()
-      .fetch()
-      .then(function (items) {
-        return res.json(items.toJSON());
-      })
-      .catch(function (error) {
+    getAll: async function (req, res, next) {
+      try {
+        let ${plural} = ${capitalised}.collection().fetch();
+        return res.json(${plural}.toJSON());
+      }
+      catch(error) {
         console.error(error);
-      });
+      }
     },
 
 
     /*
-     * Create one item
+     * Create one ${name}
     **/
-    create${capitalised}: function (req, res, next) {
-      return ${capitalised}.forge(req.params)
-      .save()
-      .then(function (item) {
-        return res.json(item.toJSON());
-      })
-      .catch(function (error) {
+    create: async function (req, res, next) {
+      try {
+        let ${name} = await ${capitalised}.forge(req.params).save();
+        return res.json(${name}.toJSON());
+      }
+      catch (error) {
         console.error(error);
-      });
+      }
     },
 
 
     /*
-     * Update one item
+     * Update ${name}
     **/
-    create${capitalised}: function (req, res, next) {
-      return ${capitalised}.where('id', req.params.id)
-      .fetch()
-      .then(function (item) {
-        return item.save(req.params)
-      })
-      .then(function (updateItem) {
-        return res.json(updateItem.toJSON());
-      })
-      .catch(function (error) {
+    update: async function (req, res, next) {
+      try {
+        let ${name} = await ${capitalised}.where('id', req.params.id).fetch();
+
+        return await ${name}.save(req.params);
+      }
+      catch (error) {
         console.error(error);
-      });
+      }
     }
   });
 

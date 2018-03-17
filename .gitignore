@@ -1,4 +1,9 @@
 *.log
 *.pem
 *~
+models
+controllers
+collections
+routes
+widgets
 node_modules/

@@ -5,8 +5,7 @@
  */
 
 
-module.exports = function (name) {
-  let capitalised = name.charAt(0).toUpperCase() + name.slice(1);
+module.exports = function () {
   let tmpl = `
   {{#if collection}}
     {{#each collection}}
