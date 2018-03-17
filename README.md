@@ -9,18 +9,13 @@ npm i widget-cli -g
 ```
 
 ### Commands
-```
-widget-cli --model [name] (-m)
-widget-cli --collection [name] (-c)
-widget-cli --controller [name] (-ctr)
-widget-cli --route [name] (-r)
-widget-cli --widget [name] (-w)
-widget-cli project-name  (-a) // creates model, controller, collection, and route
-```
 
-
-### Structure
-
+  - `widget-cli -m [name]` - Creates model template
+  - `widget-cli -c [name]` -  Creates collection template
+  - `widget-cli -ctr [name]` - Creates controller template
+  - `widget-cli --route [name]` -  Creates route template
+  - `widget-cli -a [name]` - - Creates model, controller, collection, and route templates
+  - `widget-cli -w [name]` -  Creates widget template
 
 
 License
@@ -28,7 +23,7 @@ License
 
 (MIT License)
 
-Copyright (c) 2016 - 2017 Qawelesizwe Mlilo <qawemlilo@gmail.com>
+Copyright (c) 2016 - 2018 Qawelesizwe Mlilo <qawemlilo@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
